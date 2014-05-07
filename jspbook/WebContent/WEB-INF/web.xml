@@ -37,4 +37,20 @@
     <error-code>404</error-code>
     <location>/404error.jsp</location>
   </error-page>
+  
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>jspbook auth</web-resource-name>
+      <url-pattern>/ch03/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>webadmin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>WebAdminRealm</realm-name>
+  </login-config>
+  
 </web-app>
