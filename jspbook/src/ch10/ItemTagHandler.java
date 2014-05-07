@@ -9,7 +9,7 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class ItemTagHandler extends SimpleTagSupport
 {
     private String bgcolor;
-    private int border;
+    private String border;
     
     public void doTag() throws IOException, JspException
     {
@@ -46,13 +46,18 @@ public class ItemTagHandler extends SimpleTagSupport
         this.bgcolor = bgcolor;
     }
     
-    public int getBorder()
+    public String getBorder()
     {
         return border;
     }
     
-    public void setBorder(int border)
+    public void setBorder(String border)
     {
         this.border = border;
+    }
+    
+    public void setBorder(int border)
+    {
+        this.border = Integer.toString(border);
     }
 }
