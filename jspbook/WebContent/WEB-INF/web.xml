@@ -53,4 +53,8 @@
     <realm-name>WebAdminRealm</realm-name>
   </login-config>
   
+  <listener>
+    <listener-class>jstlloader.InitialMember</listener-class>
+  </listener>
+  
 </web-app>
