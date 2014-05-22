@@ -7,10 +7,11 @@ import java.util.Properties;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 @WebListener
-public class PropertyListener
+public class PropertyListener implements ServletContextListener
 {
     public PropertyListener() {}
     
@@ -30,4 +31,9 @@ public class PropertyListener
         }
         context.setAttribute("prop", p);
     }
+
+    public void contextDestroyed(ServletContextEvent event) {}
 }
+
+
+
