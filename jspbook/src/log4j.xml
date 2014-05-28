@@ -19,6 +19,35 @@
         </layout>
     </appender>
     
+    <appender name="rolling" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="c:/tmp/rolling.log.html" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="10kb" />
+        <layout class="org.apache.log4j.HTMLLayout" />
+    </appender>
+    
+    <appender name="shortroll" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="c:/tmp/shortroll.log" />
+        <param name="Append" value="true" />
+        <param name="DatePattern" value="'.'yyMMdd" />
+        <param name="MaxFileSize" value="1kb" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%t> [%d{yyyy-MM-dd HH:mm:ss}] [%c{1}] [%L] [%p] %m %n " />
+        </layout>
+    </appender>
+    
+    <logger name="jspbook.ch14">
+        <level value="INFO" />
+        <appender-ref ref="dailyout" />
+    </logger>
+    
+    <logger name="org.apache.jsp.ch14">
+        <level value="WARN" />
+        <appender-ref ref="rolling" />
+        <appender-ref ref="shortroll" />
+    </logger>
+    
     <root>
         <level value="INFO" />
         <appender-ref ref="stdout" />

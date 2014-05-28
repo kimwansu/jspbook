@@ -31,10 +31,7 @@
     <url-pattern>/DifferentServlet</url-pattern>
     <url-pattern>/AnotherServlet</url-pattern>
   </servlet-mapping>
-  <error-page>
-    <error-code>404</error-code>
-    <location>/404error.jsp</location>
-  </error-page>
+  
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>jspbook auth</web-resource-name>
@@ -77,6 +74,16 @@
   <listener>
     <listener-class>ch13.UserSessionListener</listener-class>
   </listener>
+  
+  
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/error/error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error/404-error.jsp</location>
+  </error-page>
 </web-app>
 
 
